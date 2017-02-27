@@ -1,0 +1,9 @@
+com\beginsamuel\thymeleaf\ServiceContact.class
+com\beginsamuel\thymeleaf\Address.class
+com\beginsamuel\thymeleaf\LineItem.class
+com\beginsamuel\thymeleaf\Location.class
+com\beginsamuel\thymeleaf\IndexController.class
+com\beginsamuel\thymeleaf\Order.class
+com\beginsamuel\thymeleaf\ShoppingCart.class
+com\beginsamuel\thymeleaf\WebApplication.class
+com\beginsamuel\thymeleaf\Product.class

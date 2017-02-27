@@ -1,0 +1,17 @@
+include::intro.adoc[]
+
+[[resources]]
+= Resources
+
+[[resources-Products]]
+== Products
+The Product resource is used to list.
+include::{snippets}/list-products/response-fields.adoc[]
+[[resources-Products-Request]]
+=== Product request
+Product Request
+include::{snippets}/list-products/curl-request.adoc[]
+[[resources-Products-Response]]
+=== Product Response
+Product Response
+include::{snippets}/list-products/http-response.adoc[]

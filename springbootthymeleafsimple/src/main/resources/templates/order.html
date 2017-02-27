@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${order.title}"></title>
+</head>
+<body>
+<div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="text-success" >Order Details - Order # <span th:text="${order.id}"></span></h2>
+          </div>
+        </div>
+      
+      <section>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="new-list-view-responsive new-list-view-responsive-sm">
+                <ul class="new-list-view">
+				
+				
+				  
+                  <li th:each="lineItem : ${order.shoppingCart.lineItems}">
+					    <table cellspacing="1" cellpadding="1" border="1" style="border:1px solid white;width:70%;">
+						  <tr>
+                            <th class="col col-20">Product</th>
+                            <th class="col col-20">Quantity</th>
+                            <th class="col col-45">Price</th>
+                            <th class="col col-45">Total</th>
+                          </tr>
+						  <tr>
+                            <td class="col col-20" th:text="${lineItem.product.productName}">Product</td>
+                            <td class="col col-20" th:text="${lineItem.Quantity}">Quantity</td>
+                            <td class="col col-45" th:text="${lineItem.Price}">Price</td>
+                            <td class="col col-45" th:text="${lineItem.Quantity * lineItem.Price }">Total</td>
+                          </tr>
+						  <tr>
+                            <th class="col col-20">Location</th>
+                            <th class="col col-20">Service Contact</th>
+                            <th class="col col-45">Service Address</th>
+                            <th class="col col-45">Shiiping Address</th>
+                          </tr>
+						  <tr th:each="location : ${lineItem.locations}">
+                            <td class="col col-20">
+								<span th:text="${ location.name }" />
+								<span th:text="${location.address}" />
+							</td>
+                            <td class="col-sm-4">
+								  <p th:text="${ location.serviceContact.firstName }" ></p>
+								  <p th:text="${ location.serviceContact.email } "></p>
+								  <p th:text="${ location.serviceContact.phoneNumber }"> </p>
+                            </td>
+                            <td class="col-sm-4">
+								  <p th:text="${ location.serviceAddress.locationName } "></p>
+								  <p th:text="${ location.serviceAddress.addressLine } "></p>
+								  <p th:text="${ location.serviceAddress.addressDetails } "></p>
+                            </td>
+                            <td class="col-sm-4">
+								  <p th:text="${ location.shippingAddress.locationName } "></p>
+								  <p th:text="${ location.shippingAddress.addressLine } "></p>
+								  <p th:text="${ location.shippingAddress.addressDetails } "></p>
+                            </td>
+                           </tr>
+						</table>
+                    
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </section>
+      </div>
+</body>
+</html>

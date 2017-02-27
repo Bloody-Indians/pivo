@@ -1,0 +1,10 @@
+---
+# this manifest deploys the entire THYMEE application
+applications:
+# 1) thymee service
+- name: thymee-service
+  host: thymee-service-dev
+  memory: 1G
+  random-route: false
+  buildpack: https://github.com/tsukhu/java-buildpack.git
+  path: springbootthymeleafsimple/target/springbootthymeleafsimple-1.0.0.jar

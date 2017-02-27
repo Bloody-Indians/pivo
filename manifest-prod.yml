@@ -1,0 +1,10 @@
+---
+# this manifest deploys the entire DINUMA application
+applications:
+# 1) dinuma service
+- name: dinuma-service
+  host: dinuma-service-dev
+  memory: 512M
+  random-route: false
+  buildpack: https://github.com/tsukhu/java-buildpack.git
+  path: bloodyindian/target/bloodyindian-1.0.0.jar
